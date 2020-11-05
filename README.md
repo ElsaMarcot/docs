@@ -50,6 +50,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                     "name": "alice cezane"
                   , "phone": "+33600000001"
                   , "email": "alice@mail.com"
+                  , "relationship": "child"
                 },
                 { 
                     "name": "bob cezane"
@@ -60,6 +61,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
             , "agency": {
                   "name": "PF d'aix en provence"
                 , "code": "A13100"
+                , "email": "pf.aix@mail.com"
               } 
             , "counselor": {
                   "firstname": "Bruce"
@@ -84,7 +86,7 @@ On success, the response will return a `200` with the json `page` object.
 
 ```json
 { 
-    "slug": "pcezane-e45s3"
+    "_ID": "cezane1234"
   , "firstname": "paul"
   , "lastname": "cezane"
   , "dod": "2018-12-19T00:00:00.000Z"
@@ -93,7 +95,7 @@ On success, the response will return a `200` with the json `page` object.
 } 
 ```
 
-You might want to save the `slug` attribute in your database. It's the Inmemori page ID, and is necessery for you to have if you want to access more advanced endpoint on our API.
+You might want to save the `_ID` attribute in your database. 
 
 
 ## Data Schemas
@@ -138,10 +140,10 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 |-----------------|----------------|-----------------------------------|--------------------------------|
 | name            | `string `      | Fullname of the claimant          | Bob Stuart |
 | phone           | `string `      | mobile number                     | +33600000000 |
-| landline        | `string `      | landline number (tel fix)         | +33100000000 |
+| landline        | `string `      | landline number (tel fixe)        | +33100000000 |
 | email           | `string `      | contact email                     | bob@mail.com |
 | relationship    | `string `      | relationship to the deceased      | child/parent/friend |
-| address         | `string `      | contact perosnal address          | 20 rue du Louvre, 75001 Paris |
+| address         | `string `      | contact personal address          | 20 rue du Louvre, 75001 Paris |
 
 #### Agency
 
@@ -151,7 +153,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | code            | `string `      | agency ID                      | A13100 |
 | email           | `string `      | agency email                   | pf.aix@mail.com |
 | phone           | `string `      | agency phone                   | +33608998877 |
-| landline        | `string `      | landline number (tel fix)      | +33100000000 |
+| landline        | `string `      | landline number (tel fixe)     | +33100000000 |
 | note            | `string `      | additional information         | any comment |
 
 #### Counselor
